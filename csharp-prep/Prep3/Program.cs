@@ -10,6 +10,7 @@ class Program
         string userInput = Console.ReadLine();
         int num = int.Parse(userInput);
 
+        int i = 0;
         int guess;
         do
         {
@@ -20,14 +21,17 @@ class Program
             if (guess > num)
             {
                 Console.WriteLine("Higher");
+                i++;
             }
 
             if (guess < num)
             {
                 Console.WriteLine("Lower");
+                i++;
             }
         }while (guess != num);
 
         Console.WriteLine("You guessed it!");
+        Console.WriteLine($"It took you {i} guesses.");
     }
 }
