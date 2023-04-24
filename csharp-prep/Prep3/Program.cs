@@ -10,7 +10,7 @@ class Program
         string userInput = Console.ReadLine();
         int num = int.Parse(userInput);
 
-        int i = 0;
+        int i = 1;
         int guess;
         do
         {
