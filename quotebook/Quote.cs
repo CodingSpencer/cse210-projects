@@ -1,11 +1,10 @@
 public class Quote
 {
 
-    private string _author = "";
-    private string _quote = "";
+
+    private string _author = " ";
+    private string _quote = " ";
     private Source _source;
-
-
 
     public Quote(string person, string quote, Source source)
     {
@@ -27,4 +26,5 @@ public class Quote
     {
         return $"\"{_quote}\"\n{_author} - {_source.Stringify()}";
     }
+
 }
