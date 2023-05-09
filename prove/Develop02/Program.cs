@@ -4,6 +4,9 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop02 World!");
+        Prompt prompt = new Prompt();
+        string question = prompt.GetRandomPrompt();
+        Console.WriteLine($"{question}");
+        string entry = Console.ReadLine();
     }
 }
