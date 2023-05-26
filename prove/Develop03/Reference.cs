@@ -18,11 +18,11 @@ public class Reference{
         _endVerse = endVerse;
     }
 
-    public string Display(){
-        return $"{_book} {_chapter}:{_startVerse}";
+    public void Display(){
+        Console.WriteLine($"{_book} {_chapter}:{_startVerse}");
     }
 
-    public string DisplayMultiple(){
-        return $"{_book} {_chapter}:{_startVerse}-{_endVerse}";
+    public void DisplayMultiple(){
+        Console.WriteLine($"{_book} {_chapter}:{_startVerse}-{_endVerse}");
     }
 }
