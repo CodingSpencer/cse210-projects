@@ -12,7 +12,12 @@ public class Word{
         }
         else if (_isHidden == true){
             foreach (Char i in _word){
-                Console.Write("_");
+                if (Char.IsLetter(i) == true){
+                    Console.Write("_");
+                }
+                else{
+                    Console.Write($"{i}");
+                }
             }
             Console.Write(" ");
         }
@@ -22,4 +27,5 @@ public class Word{
         
         _isHidden = true;
     }
+    
 }
