@@ -4,6 +4,12 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop03 World!");
+        Scripture scripture = new Scripture("Captain America is the best avenger ever born.");
+        scripture.DisplayScripture();
+        while (true){
+            Console.ReadLine();
+            scripture.hideScripture();
+            scripture.DisplayScripture();
+        }
     }
 }
