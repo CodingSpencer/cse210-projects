@@ -7,28 +7,45 @@ public class Activity {
 
     string _endMessage;
 
-    public Activity() {
+    private List<string> spin = new List<string>();
+    
+    public void Intro() {
+        Console.WriteLine($"Welcome to {_name} activity!");
+        Console.WriteLine(_desc);
+        Console.WriteLine("How many seconds would you like? ");
+        _sec = Console.Read();
+    }
+
+    public void Outro() {
 
     }
 
-    public Display() {
+    public void Display() {
 
     }
 
-    public SetSeconds() {
+    public void SetSeconds() {
 
     }
 
-    public Pause() {
+    public void Pause() {
 
     }
 
-    public Countdown() {
+    public void Countdown() {
 
     }
 
-    public Spin() {
-
+    public void GetReady(int Counter) {
+        Console.WriteLine("Get Ready...");
+        for (int i = 0; i < Counter; i++)
+        {
+            foreach (string character in spin)
+            {
+                Console.WriteLine(character);
+                Thread.Sleep(250);
+            }
+        }
+            
     }
-
 }

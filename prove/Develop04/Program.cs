@@ -6,13 +6,14 @@ class Program
     {
         //Console.WriteLine("Hello Develop04 World!");
         while (true) {
-            Console.Writeline("Welcome to Improving your Mindfulness!");
-            Console.Writeline("Please Choose an Option Below: ");
-            Console.Writeline("1.Breathing\n2.Reflection\n3.Listing\n4.Listing");
-            Console.Writeline("What do you want to do?");
+            Console.WriteLine("Welcome to Improving your Mindfulness!");
+            Console.WriteLine("Please Choose an Option Below: ");
+            Console.WriteLine("1.Breathing\n2.Reflection\n3.Listing\n4.Listing");
+            Console.WriteLine("What do you want to do?");
             int response = Console.Read();
             if (response == 1) {
-
+                Breathe breathe = new Breathe();
+                breathe.DoActivity();
             }
             else if (response == 2) {
                 
