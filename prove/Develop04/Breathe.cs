@@ -23,12 +23,7 @@ public class Breathe : Activity {
             int i = 3;
             Console.WriteLine("");
             Console.Write("Breathe In...");
-            while (i != 0) {
-                Console.Write(i);
-                Thread.Sleep(1000);
-                Console.Write("\b \b");
-                i--;
-            }
+            Countdown();
             i = 3;
             Console.WriteLine("");
             Console.Write("Breathe Out...");

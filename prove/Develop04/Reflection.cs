@@ -61,13 +61,7 @@ public class Reflection : Activity {
         Console.WriteLine("");
         Console.WriteLine("Now Ponder on each of the following questions as they related to this experience.");
         Console.Write("You may begin in: ");
-        int i = 3;
-        while (i != 0) { 
-            Console.Write(i);
-            Thread.Sleep(1000);
-            Console.Write("\b \b");
-            i--;
-        }
+        Countdown();
         Console.Clear();
         addReflectQuestions();
         int _time = int.Parse(_sec);

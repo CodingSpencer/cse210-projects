@@ -22,13 +22,7 @@ public class Listing : Activity {
         Console.WriteLine($"--- {reflectPrompt} ---");
 
         Console.Write("You may begin in: ");
-        int i = 3;
-        while (i != 0) { 
-            Console.Write(i);
-            Thread.Sleep(1000);
-            Console.Write("\b \b");
-            i--;
-        }
+        Countdown();
 
         int num = 0;
         int _time = int.Parse(_sec);

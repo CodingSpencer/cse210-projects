@@ -46,7 +46,13 @@ public class Activity {
     }
 
     public void Countdown() {
-
+        int i = 3;
+        while (i != 0) { 
+            Console.Write(i);
+            Thread.Sleep(1000);
+            Console.Write("\b \b");
+            i--;
+        }
     }
 
     public void GetReady(int Counter) {
