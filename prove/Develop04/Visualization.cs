@@ -34,7 +34,7 @@ public class Visualization : Activity {
         Console.Clear();
         addVisualizationPrompts();
         int length = _prompts.Count();
-        for (int i = 1; i <= length; i++) {
+        for (int i = 0; i <= length; i++) {
             Console.WriteLine("");
             Console.WriteLine(_prompts[i]);
             Console.Write("How would you respond? ");
