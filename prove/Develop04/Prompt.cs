@@ -1,22 +1,25 @@
 public class Prompt {
 
-    List<string> _usedPrompts1 = new List<string>();
+    public Prompt() {
+
+    }
+
     List<string> _prompts1 = new List<string>();
 
-    private void addReflectPrompts() {
-        _prompts1.Add("What is your take away from today?");
-        _prompts1.Add("How has today changed you?");
-        _prompts1.Add("How will you move forward from today?");
-        _prompts1.Add("Did today positively influence you? If not, why?");
-        _prompts1.Add("What lesson did you learn from this experience?");
-        _prompts1.Add("What would you tell your future self?");
-        _prompts1.Add("If you had one year left to live, what would you do?");
+    public void addReflectPrompts() {
+        _prompts1.Add("Think of a time when you did something really difficult.");
+        _prompts1.Add("Think of your proudest moment.");
+        _prompts1.Add("Think of your best memory with a loved one.");
+        _prompts1.Add("Think of your lowest moment.");
+        _prompts1.Add("Think of a memory when you tried to meet a goal.");
+        _prompts1.Add("Think of when you've served someone else.");
+        _prompts1.Add("Think of what you're most excited to do in the future.");
     }
 
     List<string> _usedPrompts2 = new List<string>();
     List<string> _prompts2 = new List<string>();
 
-    private void addListPrompts() {
+    public void addListPrompts() {
         _prompts2.Add("When have you felt the Holy Ghost this month?");
         _prompts2.Add("What have been your top experinces this month?");
         _prompts2.Add("What are some challenges you have overcome this month?");
@@ -26,16 +29,25 @@ public class Prompt {
     
     public string GetReflectPrompt()
     {
-        if (_prompts1.Count==0){
-            addReflectPrompts();
-            _usedPrompts1.Clear();
-        }
-
         var random = new Random();
         int index = random.Next(0, _prompts1.Count);
         var newPrompt = _prompts1[index];
-        _prompts1.Remove(newPrompt);
-        _usedPrompts1.Add(newPrompt);
+        return newPrompt;
+        
+    }
+
+    public string GetListPrompt()
+    {
+        if (_prompts2.Count==0){
+            addReflectPrompts();
+            _usedPrompts2.Clear();
+        }
+
+        var random = new Random();
+        int index = random.Next(0, _prompts2.Count);
+        var newPrompt = _prompts2[index];
+        _prompts2.Remove(newPrompt);
+        _usedPrompts2.Add(newPrompt);
         return newPrompt;
         
     }
