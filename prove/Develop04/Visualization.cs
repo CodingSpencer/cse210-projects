@@ -8,10 +8,11 @@ public class Visualization : Activity {
     }
 
     public void DoActivity() {
-        _sec = Intro();
+        Intro();
         GetReady(3);
         Visualize();
-        Outro(_name, _sec);
+        Console.WriteLine("");
+        Console.WriteLine("You have completed another Visualization Activity.");
         Spin(3);
         Console.Clear();
     }
@@ -30,12 +31,15 @@ public class Visualization : Activity {
         Console.Write("You may begin in: ");
         Countdown();
 
-        foreach (string prompt in _prompts) {
-            Console.WriteLine(prompt);
+        Console.Clear();
+        addVisualizationPrompts();
+        int length = _prompts.Count();
+        for (int i = 1; i <= length; i++) {
+            Console.WriteLine("");
+            Console.WriteLine(_prompts[i]);
             Console.Write("How would you respond? ");
             Spin(20);
         }
-
     }
 
     void addVisualizationPrompts() {

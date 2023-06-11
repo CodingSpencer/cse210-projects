@@ -8,17 +8,12 @@ public class Activity {
 
     private List<string> spin = new List<string>() { "/", "|" ,@"\"};
 
-    public string Intro() {
+    public void Intro() {
         Console.WriteLine("");
         Console.WriteLine($"Welcome to {_name} activity!");
         Console.WriteLine(_desc);
-        Console.WriteLine("");
-        Console.WriteLine("How many seconds would you like? ");
-        _sec = Console.ReadLine();
-        Console.Clear();
-        return _sec;
     }
-
+    
     public void Outro(string name, string time) {
         Console.WriteLine("");
         Console.WriteLine($"You have completed another {time} seconds of the {name} Activity.");
@@ -28,8 +23,12 @@ public class Activity {
 
     }
 
-    public void SetSeconds() {
-
+    public string SetSeconds() {
+        Console.WriteLine("");
+        Console.WriteLine("How many seconds would you like? ");
+        _sec = Console.ReadLine();
+        Console.Clear();
+        return _sec;
     }
 
     public void Spin(int Counter) {

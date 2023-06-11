@@ -6,7 +6,8 @@ public class Listing : Activity {
     }
 
     public void DoActivity() {
-        _sec = Intro();
+        Intro();
+        _sec = SetSeconds();
         GetReady(3);
         List();
         Outro(_name, _sec);

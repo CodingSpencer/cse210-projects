@@ -6,7 +6,8 @@ public class Breathe : Activity {
     }
 
     public void DoActivity() {
-        _sec = Intro();
+        Intro();
+        _sec = SetSeconds();
         GetReady(3);
         InAndOut();
         Outro(_name, _sec);
@@ -20,19 +21,12 @@ public class Breathe : Activity {
         DateTime futureTime = startTime.AddSeconds(_time); 
         while (true) {
             Console.WriteLine("");
-            int i = 3;
             Console.WriteLine("");
             Console.Write("Breathe In...");
             Countdown();
-            i = 3;
             Console.WriteLine("");
             Console.Write("Breathe Out...");
-            while (i != 0) {
-                Console.Write(i);
-                Thread.Sleep(1000);
-                Console.Write("\b \b");
-                i--;
-            }
+            Countdown();
             DateTime currentTime = DateTime.Now; 
             if (currentTime > futureTime) {
                 break;

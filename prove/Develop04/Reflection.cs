@@ -10,7 +10,8 @@ public class Reflection : Activity {
     }
 
     public void DoActivity() {
-        _sec = Intro();
+        Intro();
+        _sec = SetSeconds();
         GetReady(3);
         Reflect();
         Outro(_name, _sec);
