@@ -1,9 +1,23 @@
 public abstract class Shape {
-    string _color;
+    private string _color;
 
-    public virtual void SetColor() {
+    public Shape() {
 
     }
+
+    public Shape(string color) {
+        _color = color;
+    }
+    
+    public void SetColor(string color) {
+        _color = color;
+    }
+
+    public string GetColor() {
+        return _color;
+    }
+
+    public abstract double GetArea();
 
 
 }
