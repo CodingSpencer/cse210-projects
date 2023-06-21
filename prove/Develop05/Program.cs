@@ -4,6 +4,42 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop05 World!");
+        List<Goal> goals = new List<Goal>();
+
+        
+
+        while (true) {
+            Console.WriteLine("Welcome to Eternal Quest Program!");
+            Console.WriteLine("");
+            Console.WriteLine("Please Choose an Option Below: ");
+            Console.WriteLine("1.New Goal\n2.List Goals\n3.Save Goal\n4.Load Goal\n5.Add Event\n6.Quit");
+            Console.WriteLine("What do you want to do?");
+            string response = Console.ReadLine();
+            if (response == "1") {
+                Simple simple = new Simple();
+                simple.makeGoal();
+                goals.Add(simple);
+            }
+            else if (response == "2") {
+                int i = 1;
+                foreach (Goal goal in goals) {
+                    goal.Display(i);
+                    i++;
+                }
+            }
+            else if (response == "3") {
+                
+            }
+            else if (response == "4") {
+                
+            }
+            else if (response == "5") {
+                
+            }
+            else {
+                Console.Clear();
+                break;
+            }
+            }
     }
 }
