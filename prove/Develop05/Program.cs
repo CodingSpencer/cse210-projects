@@ -16,9 +16,20 @@ class Program
             Console.WriteLine("What do you want to do?");
             string response = Console.ReadLine();
             if (response == "1") {
-                Simple simple = new Simple();
-                simple.makeGoal();
-                goals.Add(simple);
+                Console.WriteLine("The Types of Goals Are:\n1. Simple Goal\n2. Eternal Goal\n3. Checklist Goal");
+                Console.WriteLine("What type of goal would you like to make? ");
+                string type = Console.ReadLine();
+                if (type == "1") {
+                    Simple simple = new Simple();
+                    simple.makeGoal();
+                    goals.Add(simple);
+                }
+                if (type == "2") {
+
+                }
+                if (type == "3") {
+                    
+                }
             }
             else if (response == "2") {
                 int i = 1;
