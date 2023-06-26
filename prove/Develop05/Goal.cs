@@ -1,6 +1,8 @@
 public abstract class Goal {
 
-    protected int _points;
+    public string _type;
+
+    public int _points;
 
     protected string _goalName;
 
@@ -16,6 +18,16 @@ public abstract class Goal {
     }
 
     public abstract void Display(int index);
+
+    public virtual void DisplayName(int index) {
+        Console.WriteLine($"{index}. {_goalName}");
+    }
+
+    public virtual void makeComplete() {
+        _isCompleted = true;
+    }
+
+    
 
 
     public string Completed() {

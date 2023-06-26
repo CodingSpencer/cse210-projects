@@ -1,9 +1,7 @@
 public class Simple : Goal {
 
-
-
-    public Simple() {
-
+    public Simple(string type) {
+        _type = type;
     }
 
 
