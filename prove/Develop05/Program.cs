@@ -25,8 +25,8 @@ class Program : Goal
             Console.WriteLine("1.New Goal\n2.List Goals\n3.Save Goal\n4.Load Goal\n5.Add Event\n6.Quit");
             Console.Write("What do you want to do? ");
             string response = Console.ReadLine();
-            Console.Clear();
             if (response == "1") {
+                Console.Clear();
                 Console.WriteLine("The Types of Goals Are:\n1. Simple Goal\n2. Eternal Goal\n3. Checklist Goal");
                 Console.Write("What type of goal would you like to make? ");
                 string type = Console.ReadLine();
@@ -58,14 +58,27 @@ class Program : Goal
                     goal.Display(i);
                     i++;
                 }
+                Console.Write("Press Enter When Done: ");
+                string input = Console.ReadLine();
+                if (input == "") {
+            
+                }
             }
             else if (response == "3") {
                 SaveFile saveFile = new SaveFile();
                 saveFile.SaveToFile(goals);
+                string input = Console.ReadLine();
+                if (input == "") {
+            
+                }
             }
             else if (response == "4") {
                 SaveFile saveFile = new SaveFile();
                 saveFile.ReadFromFile();
+                string input = Console.ReadLine();
+                if (input == "") {
+            
+                }
             }
             else if (response == "5") {
                 Console.Clear();
@@ -81,6 +94,10 @@ class Program : Goal
                 Goal newGoals = goals[finish];
                 Console.WriteLine($"Congrats! You have earned {score.getPoints(newGoals)} points!\n\n");
                 Console.WriteLine($"Your score is: {score.setScore(score.getPoints(newGoals))}");
+                string input = Console.ReadLine();
+                if (input == "") {
+            
+                }
             }
             else {
                 Console.Clear();
