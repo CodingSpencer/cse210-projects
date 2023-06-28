@@ -6,7 +6,7 @@ public class Simple : Goal {
 
 
     public override void Display(int index) {
-        Console.WriteLine($" [{Completed()}] {index}. {_goalName} ({_desc}) ");
+        Console.WriteLine($" [{Completed()}] {index}. {positive()} {_goalName} ({_desc}) ");
     }
 
 

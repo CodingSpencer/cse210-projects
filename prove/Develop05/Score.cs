@@ -9,8 +9,10 @@ public class Score : Goal {
         return points;
     }
 
-    public int setScore(int points) {
+    public int setScore(int points, bool complete) {
+        if (complete == false) {
         _score += points;
+        }
         return _score;
     }
 

@@ -5,7 +5,12 @@ public class Eternal : Goal {
 
     }
 
+    public override void makeComplete()
+    {
+        _isCompleted = false;
+    }
+
     public override void Display(int index) {
-        Console.WriteLine($" [{Completed()}] {index}. {_goalName} ({_desc}) ");
+        Console.WriteLine($" [{Completed()}] {index}. {positive()} {_goalName} ({_desc}) ");
     }
 }

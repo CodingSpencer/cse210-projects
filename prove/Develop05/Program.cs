@@ -1,28 +1,35 @@
 using System;
 
-class Program : Goal
+class Program
 {
-
-    public override void Display(int index) {
-        Console.WriteLine($" [{Completed()}] {index}. {_goalName} ({_desc}) ");
-    }
-
-    public int getPoints(Goal goal) {
-        return _points;
-    }
 
     static void Main(string[] args)
     {
         List<Goal> goals = new List<Goal>();
 
+        int _score = 0;
+
+        string _level;
         
 
         while (true) {
+            if (_score > 500) {
+                _level = "Expert";
+            }
+            else if (_score > 350) {
+                _level = "Intermediate";
+            }
+            else if (_score > 100) {
+                _level = "Beginner";
+            }
+            else {
+                _level = "Novice";
+            }
             Console.Clear();
             Console.WriteLine("Welcome to Eternal Quest Program!");
-            Console.WriteLine("");
+            Console.WriteLine($"Score: {_score} | Level: {_level}");
             Console.WriteLine("Please Choose an Option Below:");
-            Console.WriteLine("1.New Goal\n2.List Goals\n3.Save Goal\n4.Load Goal\n5.Add Event\n6.Quit");
+            Console.WriteLine("1.New Goal\n2.List Goals\n3.Save Goal\n4.Load Goal\n5.Complete Event\n6.Quit");
             Console.Write("What do you want to do? ");
             string response = Console.ReadLine();
             if (response == "1") {
@@ -67,6 +74,7 @@ class Program : Goal
             else if (response == "3") {
                 SaveFile saveFile = new SaveFile();
                 saveFile.SaveToFile(goals);
+                Console.Write("Press Enter When Done: ");
                 string input = Console.ReadLine();
                 if (input == "") {
             
@@ -74,7 +82,8 @@ class Program : Goal
             }
             else if (response == "4") {
                 SaveFile saveFile = new SaveFile();
-                saveFile.ReadFromFile();
+                saveFile.ReadFromFile(goals);
+                Console.Write("Press Enter When Done: ");
                 string input = Console.ReadLine();
                 if (input == "") {
             
@@ -88,12 +97,33 @@ class Program : Goal
                     i++;
                 }
                 Console.WriteLine("Which goal did you accomplish? ");
-                int finish = int.Parse(Console.ReadLine());
-                goals[finish -= 1].makeComplete();
-                Score score = new Score();
-                Goal newGoals = goals[finish];
-                Console.WriteLine($"Congrats! You have earned {score.getPoints(newGoals)} points!\n\n");
-                Console.WriteLine($"Your score is: {score.setScore(score.getPoints(newGoals))}");
+                int finish = int.Parse(Console.ReadLine()) - 1;
+
+                if (goals[finish].returnComplete() == false){
+                    if (goals[finish]._isPositive == true) {
+                        _score += goals[finish].returnPoints();
+                    }
+                    else {
+                        _score -= goals[finish].returnPoints();
+                    }
+                    goals[finish].makeComplete();
+                    if (goals[finish]._isPositive == true) {
+                        _score += goals[finish].getScore();
+                        Console.WriteLine($"Congrats! You have earned {goals[finish]._points} points!\n\n");
+
+                    }
+                    else {
+                        _score -= goals[finish].getScore();
+                        Console.WriteLine($"Sorry! You have lost {goals[finish]._points} points!\n\n");
+
+                    }
+
+                }
+                // Score score = new Score();
+                // // Goal newGoals = goals[finish];
+                Console.WriteLine($"Congrats! You have earned {goals[finish]._points} points!\n\n");
+                Console.WriteLine($"Your score is: {_score}");
+                Console.Write("Press Enter When Done: ");
                 string input = Console.ReadLine();
                 if (input == "") {
             
