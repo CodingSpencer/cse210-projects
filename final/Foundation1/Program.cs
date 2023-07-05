@@ -2,29 +2,30 @@ using System;
 
 class Program
 {
+
     static void Main(string[] args)
     {
-        Console.WriteLine("");
+        List<Video> videos = new List<Video>();
 
         Video v = new Video("Video 1","Tony Stark",454);
-        v.Display();
 
         Comments c = new Comments("Steve Rogers","What a great video!");
         v.addComment(c.format());
 
+
         Comments c1 = new Comments("Natasha Rominoff","This was so helpful!");
         v.addComment(c1.format());
+
 
         Comments c2 = new Comments("Bruce Banner","Hulk Smash!");
         v.addComment(c2.format());
 
-        v.DisplayComments();
 
-        Console.WriteLine("");
+
+        videos.Add(v);
 
 
         Video v1 = new Video("Video 2","Emperor Palpatine",999);
-        v1.Display();
 
         Comments c3 = new Comments("Anakin Skywalker","I hate you!");
         v1.addComment(c3.format());
@@ -34,14 +35,13 @@ class Program
 
         Comments c5 = new Comments("General Grievious","General Kenobi!");
         v1.addComment(c5.format());
+        
+        videos.Add(v1);
 
-        v1.DisplayComments();
 
-        Console.WriteLine("");
 
 
         Video v2 = new Video("Video 3","Rachel Green",777);
-        v2.Display();
 
         Comments c6 = new Comments("Ross Geller","Pivot!");
         v2.addComment(c.format());
@@ -52,7 +52,18 @@ class Program
         Comments c8 = new Comments("Joey Tribbiani","Joey doesn't share food!");
         v2.addComment(c2.format());
 
-        v2.DisplayComments();
+        videos.Add(v2);
+
+
+
+        foreach (Video video in videos) {
+            Console.WriteLine("");
+            Console.WriteLine($"{video._title} - {video._author} - {video._length} seconds");
+            v.DisplayComments();
+        }
+
+
+
 
         
 

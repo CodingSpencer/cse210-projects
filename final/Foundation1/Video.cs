@@ -1,15 +1,12 @@
 public class Video {
 
-    string _title;
+    public string _title;
 
-    string _author;
+    public string _author;
 
-    int _length;
+    public int _length;
 
     List<string> comments = new List<string>();
-
-
-    List<Video> videos = new List<Video>();
 
     public Video(string title, string author, int length) {
         _title = title;
@@ -22,14 +19,15 @@ public class Video {
     }
 
     public void Display() {
-        Console.WriteLine($"{_title} - {_author} - {_length} seconds");
+        Console.WriteLine();
     }
 
     public void DisplayComments() {
-        Console.WriteLine("Comments");
+        Console.WriteLine($"Comments - {comments.Count()}");
         foreach (string text in comments) {
             Console.WriteLine(text);
         }
+        Console.WriteLine("");
     }
 
 }
