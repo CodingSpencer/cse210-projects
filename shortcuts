@@ -5,3 +5,4 @@ Ctrl + [: Indent
 Ctrl + ]: Unindent
 Ctrl + S: Save
 Tag Name + Enter: Creates open and closing tags
+New Folder Command: dotnet new console
